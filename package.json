@@ -1,7 +1,8 @@
 {
   "name": "univ-lr_stockagecalcdonnees__projet1",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project to understand how a blockchain works",
+  "private": true,
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -348,16 +349,34 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+      "compile": "truffle compile",
+      "test": "truffle test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1.git"
   },
-  "author": "",
+  "author": {
+      "name": "Brenckle Gaetan",
+      "email": "gaetan.brenckle@etudiant.univ-lr.fr",
+      "url": ""
+  },
+  "contributors": [
+      {
+          "name": "Pitek Gautier",
+          "email": "gautier.pitek@etudiant.univ-lr.fr",
+          "url": ""
+      }
+      ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1/issues"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "homepage": "https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1#readme"
 }

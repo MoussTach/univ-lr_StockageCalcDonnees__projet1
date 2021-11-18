@@ -1,0 +1,173 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "AnanasByteCode",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_decimals",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					}
+				],
+				"name": "createAnanas",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "created",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isAnanas",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_tokenContract",
+						"type": "address"
+					}
+				],
+				"name": "verifyAnanas",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/AnanasFactory.sol": "AnanasFactory"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ananas.sol": {
+			"keccak256": "0xd473eb9f93d54c69543f16bae0a6f5290f2a1efbc605aba63990ef258f629448",
+			"urls": [
+				"bzz-raw://1fa695a52ca1656b6b17551331b7c74b9574b63f262358a18b7c111c8188502a",
+				"dweb:/ipfs/QmSMmWbvtn6UqPimgxM3jmJJYpuxgt1g8q1gU2jsbUwYPd"
+			]
+		},
+		"contracts/AnanasFactory.sol": {
+			"keccak256": "0x0027bc787f83f17b9bc610d91a1744e44efca9bc9c405bf865daecaadd3aafc7",
+			"urls": [
+				"bzz-raw://093010c9f1ccc7ee4f76d7600e82463630b0b43f427739d6d1f42fe9dc6fa1cd",
+				"dweb:/ipfs/QmRGgonSw4qKkzWfG2WwdVC8JfidhAu4KAnC39FuDbNuzh"
+			]
+		},
+		"contracts/eip20/EIP20Interface.sol": {
+			"keccak256": "0x9b7b1267432a11384bd07b6e5b8a5bcef6421c12088e147ae5fadd1cc564b734",
+			"urls": [
+				"bzz-raw://07932b88c88b534c4241bd4a2859f5c69f9a3673ae060ac5bca84be76ad1bf70",
+				"dweb:/ipfs/QmPq77AJRNnT1UTApb7Qt7fFHwCWHdGmV43ken1EP16QF7"
+			]
+		}
+	},
+	"version": 1
+}

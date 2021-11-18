@@ -1,5 +1,5 @@
 import Web3 from "web3";
-import metaCoinArtifact from "../../build/contracts/MetaCoin.json";
+import AnanasArtifact from "../../build/contracts/Ananas.json";
 
 const App = {
   web3: null,
@@ -12,9 +12,9 @@ const App = {
     try {
       // get contract instance
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = metaCoinArtifact.networks[networkId];
+      const deployedNetwork = AnanasArtifact.networks[networkId];
       this.meta = new web3.eth.Contract(
-        metaCoinArtifact.abi,
+        AnanasArtifact.abi,
         deployedNetwork.address,
       );
 
@@ -29,8 +29,8 @@ const App = {
   },
 
   refreshBalance: async function() {
-    const { getBalance } = this.meta.methods;
-    const balance = await getBalance(this.account).call();
+    const { balanceOf } = this.meta.methods;
+    const balance = await balanceOf(this.account).call();
 
     const balanceElement = document.getElementsByClassName("balance")[0];
     balanceElement.innerHTML = balance;
@@ -42,8 +42,8 @@ const App = {
 
     this.setStatus("Initiating transaction... (please wait)");
 
-    const { sendCoin } = this.meta.methods;
-    await sendCoin(receiver, amount).send({ from: this.account });
+    const { transfer } = this.meta.methods;
+    await transfer(receiver, amount).send({ from: this.account });
 
     this.setStatus("Transaction complete!");
     this.refreshBalance();
