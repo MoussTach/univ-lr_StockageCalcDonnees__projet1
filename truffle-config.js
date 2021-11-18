@@ -18,11 +18,11 @@
  *
  */
 
-// const HDWallet = require('truffle-hdwallet-provider');
-// const infuraKey = "fj4jll3k.....";
-//
-// const fs = require('fs');
-// const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+const fs = require('fs');
+const mnemonic = fs.readFileSync(".secret").toString().trim(); //.secret Mnemonic Phrase 
+var HDWalletProvider = require("truffle-hdwallet-provider");
+require('babel-register')
 
 module.exports = {
   /**
@@ -49,6 +49,18 @@ module.exports = {
     
     develop: {
       port: 8545
+    },
+
+    networkName: {
+        provider: () => new HDWalletProvider(mnemonic, `https://apis.ankr.com/cf5dcebb5f6d4b7788ab4f987bf470ef/58bf2b6fef92827f28aa2f428b046d53/eth/archive/main`),
+        //https://apis.ankr.com/cf5dcebb5f6d4b7788ab4f987bf470ef/58bf2b6fef92827f28aa2f428b046d53/eth/fast/ropsten
+        network_id: 1, //network's chain id
+        networkCheckTimeout: 10000,
+        gas: 4612388, // Chain has a lower block limit than mainnet
+        confirmations: 2, //# of confs to wait between deployments. (default: 0)
+        timeoutBlocks: 200, // # of blocks before a deployment times out (minimum/default: 50)
+        skipDryRun: true, //Skip dry run before migrations? (default: false for public nets)
+        
     },
 
     contracts_directory: './contracts/',
@@ -93,10 +105,10 @@ module.exports = {
       // version: "0.5.1",    // Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      optimizer: {
-        enabled: false,
-        runs: 200
-      },
+     //optimizer: {
+     //   enabled: false,
+     //   runs: 200
+     // },
       //  evmVersion: "byzantium"
       // }
     }

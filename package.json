@@ -314,7 +314,7 @@
     "uuid": "^3.4.0",
     "vary": "^1.1.2",
     "verror": "^1.10.0",
-    "web3": "^1.2.1",
+    "web3": "^1.6.1",
     "web3-bzz": "^1.2.1",
     "web3-core": "^1.2.1",
     "web3-core-helpers": "^1.2.1",
@@ -349,25 +349,25 @@
     "yauzl": "^2.10.0"
   },
   "scripts": {
-      "compile": "truffle compile",
-      "test": "truffle test"
+    "compile": "truffle compile",
+    "test": "truffle test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1.git"
   },
   "author": {
-      "name": "Brenckle Gaetan",
-      "email": "gaetan.brenckle@etudiant.univ-lr.fr",
-      "url": ""
+    "name": "Brenckle Gaetan",
+    "email": "gaetan.brenckle@etudiant.univ-lr.fr",
+    "url": ""
   },
   "contributors": [
-      {
-          "name": "Pitek Gautier",
-          "email": "gautier.pitek@etudiant.univ-lr.fr",
-          "url": ""
-      }
-      ],
+    {
+      "name": "Pitek Gautier",
+      "email": "gautier.pitek@etudiant.univ-lr.fr",
+      "url": ""
+    }
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1/issues"
