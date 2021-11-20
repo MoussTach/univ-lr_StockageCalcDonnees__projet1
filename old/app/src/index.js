@@ -1,4 +1,4 @@
-import Web3 from "web3";
+import Web3 = require("web3");
 import AnanasArtifact from "../../build/contracts/Ananas.json";
 
 const App = {
