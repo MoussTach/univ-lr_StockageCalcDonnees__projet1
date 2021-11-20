@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ananas Export</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <header>
+    <ul>
+        <li><a href="reference.html">Renseignement</a></li>
+        <li><a href="tracking.html">Suivi de colis</a></li>
+    </ul>
+  </header>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Ananas Export</h1>
+          <hr/>
+          <br/>
+        </div>
+    </div>
+
+    <div id="formulaire">
+        <form action="" method="post">
+            <div>
+                <label for="no_lot">N° Lot:</label>
+                <input type="number" id="no_lot" placeholder="10231">
+            </div>
+            <div>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" placeholder="10231">
+            </div>
+            <div>
+                <label for="depart_place">Lieu de départ</label>
+                <input type="text" id="depart_place" placeholder="Paraguay">
+            </div>
+            <div>
+                <label for="arrived_place">Lieu d'arrivé</label>
+                <input type="text" id="arrived_place" placeholder="Groenland">
+            </div>
+            <div>
+                <label for="date_expedition">Date d'expédition</label>
+                <input type="date" id="date_expedition">
+            </div>
+            <div class="button">
+                <button type="submit">Envoyer l'exportation</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
