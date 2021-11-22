@@ -1,7 +1,7 @@
 {
-  "name": "pet-shop",
+  "name": "univ-lr_stockagecalcdonnees__projet1",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project to understand how a blockchain works",
   "main": "truffle.js",
   "directories": {
     "test": "test"
@@ -10,7 +10,22 @@
     "dev": "lite-server",
     "test": "truffle test"
   },
-  "author": "",
+    "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoussTach/univ-lr_StockageCalcDonnees__projet1.git"
+  },
+  "author": {
+    "name": "Brenckle Gaetan",
+    "email": "gaetan.brenckle@etudiant.univ-lr.fr",
+    "url": ""
+  },
+  "contributors": [
+    {
+      "name": "Pitek Gautier",
+      "email": "gautier.pitek@etudiant.univ-lr.fr",
+      "url": ""
+    }
+  ],
   "license": "ISC",
   "devDependencies": {
     "lite-server": "^2.3.0"
