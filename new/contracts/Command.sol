@@ -1,42 +1,102 @@
-pragma solidity ^0.4.19;
+pragma solidity ^0.5.2;
 
 contract Command {
 
-	struct			Command {
+	struct			CommandData {
 		uint		no_lot;
 		uint 		amount;
 	}
 
+	struct 		Shipment {
+		uint		no_ship;
+		address	worker;
+		string		depart_place;
+		string		arrived_place;
+		uint256	date_expedition;
+	}
 
-	mapping(address => Command[]) public commandsByCustomers;
+	mapping(address => CommandData[]) public commandsByCustomers;
+	mapping(uint => Shipment[]) public shipmentsByCommands;
 
+
+//Command
 	function createCommand(uint amountCommand) public returns(uint) {
-		customer = msg.sender;
-		Command[] commands = commandsByCustomers[customer];
+		address customer = msg.sender;
 		
-		no_lotRand = random();
+		CommandData[] storage commands = commandsByCustomers[customer];
 		
-		commands.push(Command({
-			no_lot: no_lotRand,
-			amount: amountCommand,
-		}));
+		uint no_lotRand = random();
 		
+		commands.push(CommandData(no_lotRand, amountCommand));
 		return no_lotRand;
 	}
 	
-	
-	function random() private view returns (uint) {
-        	// sha3 and now have been deprecated
-        	return uint(keccak256(abi.encodePacked(block.difficulty, block.timestamp)));
-        	// convert hash to integer
-        	// players is an array of entrants
-    	}
-    	
-    	
-    	function getCommandsOfCustomer() public view returns (Command[] memory) {
-    		customer = msg.sender;
-		Command[] commands = commandsByCustomers[customer];
+	function searchCommand(uint no_lot) private view returns (bool, CommandData memory) {
+		address customer = msg.sender;
+		CommandData memory foundCommand;
 		
-		return commands;
+		CommandData[] memory commands = commandsByCustomers[customer];
+		
+		for (uint i = 0; i < commands.length ; i++) {
+			CommandData memory current = commands[i];
+			if (current.no_lot == no_lot) {
+				return (true, current);
+			}
+		}
+		return (false, foundCommand);
+	}
+		
+	
+//Shipment
+	function createShipment(address customer, uint no_lot, string memory depart_Str, string memory arrived_Str, uint256 date) public returns (uint) {
+		address workerAdr = msg.sender;
+		
+		(bool isPresent, CommandData memory foundCommand) = searchCommand(no_lot);
+		
+		if (!isPresent) {
+			revert('Error, command not found');
+		}
+		
+		uint no_ShipRand = random();
+		
+		Shipment[] storage shipments = shipmentsByCommands[foundCommand.no_lot];
+		
+		shipments.push(Shipment(
+			no_ShipRand, 
+			workerAdr, 
+			depart_Str, 
+			arrived_Str, 
+			date
+		));
+		
+		return no_ShipRand;
+	}
+
+	function sizeShipmentsByCommands(uint no_lot)  public view returns (uint) {
+		(bool isPresent, CommandData memory foundCommand) = searchCommand(no_lot);
+		
+		if (!isPresent) {
+			revert('Error, command not found');
+		}
+		
+		Shipment[] memory shipments = shipmentsByCommands[foundCommand.no_lot];
+		return shipments.length;
+	}
+
+    	function getShipmentsByCommands_byId(uint no_lot, uint id) public view returns 
+    		(uint no_ship, address worker, string memory depart_place, string memory arrived_place, uint256 date_expedition) {
+		(bool isPresent, CommandData memory foundCommand) = searchCommand(no_lot);
+		
+		if (!isPresent) {
+			revert('Error, command not found');
+		}
+		
+		Shipment[] memory shipments = shipmentsByCommands[foundCommand.no_lot];
+		return (shipments[id].no_ship, shipments[id].worker, shipments[id].depart_place, shipments[id].arrived_place, shipments[id].date_expedition);
+	}   
+
+//Other
+	function random() internal view returns (uint) {
+    		return uint(blockhash(block.number - 1));
 	}
 }
