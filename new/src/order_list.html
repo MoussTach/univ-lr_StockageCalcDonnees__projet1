@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Creation de commande</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+        <ul>
+            <li><a href="formulaire.html">Formulaire</a></li>
+              <li><a href="order_creation.html">Creation de commande</a></li>
+              <li><a href="order_list.html">Liste des commandes</a></li>
+              <li><a href="reference.html">Renseignement</a></li>
+              <li><a href="tracking.html">Suivi de colis</a></li>
+          </ul>
+      </header>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center">Liste des commandes</h1>
+            <hr/>
+            <br/>
+          </div>
+      </div>
+      <table id="order_list" class="table table-image">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th>N° lot</th>
+            <th>Quantité</th>
+            <th>Date d'expédition</th>
+          </tr>
+        </thead>
+        <!-- Table body with the list of products -->
+        <tbody id="productList">
+        </tbody>
+      </table>
+
+      <table id="block_list" class="table table-image">
+        <thead class="thead-dark">
+          <tr class="text-center">
+            <th>N° lot</th>
+            <th>Quantité</th>
+            <th>Lieu départ</th>
+            <th>Lieu arrivée</th>
+            <th>Date d'expédition</th>
+          </tr>
+        </thead>
+        <!-- Table body with the list of products -->
+        <tbody id="productList">
+        </tbody>
+      </table>
+  </body>
